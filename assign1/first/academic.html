@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body style="background-image: url(bg.jpg);background-repeat: no-repeat;background-size: cover;">
+    <nav class="white">
+        <div class="nav-wrapper container">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="blue-text text-darken-4" href="personal.html">Personal Information</a></li>
+                <li><a class="blue-text text-darken-5" href="academic.html" class="blue darken-5">Academic</a></li>
+                <li><a class="blue-text text-darken-4" href="proctor.html">Proctor</a></li>
+                <li><a class="blue-text text-darken-4" href="attendance.html">Attendance</a></li>
+                <li><a class="blue-text text-darken-4" href="view.html">View Details</a></li>
+                <li><a class="blue-text text-darken-4" href="index.html">Home</a></li>
+            </ul>
+            <a href="#slide-out" class=" sidenav-trigger  black-text"><i class="fa fa-bars" aria-hidden="true"></i></a>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav">
+        <li><a class="blue-text text-darken-4" href="personal.html">Personal Information</a></li>
+        <li><a class="blue-text text-darken-5" href="academic.html" class="blue-text text-darken-5">Academic</a></li>
+        <li><a class="blue-text text-darken-4" href="proctor.html">Proctor</a></li>
+        <li><a class="blue-text text-darken-4" href="attendance.html">Attendance</a></li>
+        <li><a class="blue-text text-darken-4" href="view.html">View Details</a></li>
+        <li><a class="blue-text text-darken-4" href="index.html">Home</a></li>
+
+    </ul>
+    <br><br>
+    <div class="container">
+        <div class="container">
+        <div class="card-panel" style="opacity: 0.7;">
+            <button class="btn blue darken-4 right" onclick="edit()">edit</button>
+            <form onsubmit="response()" id="myform">
+                <div class="center"><h6>Schooling</h6></div>
+                <div class="input-field">
+                    <label>10th Board</label>
+                    <input id="tb" type="text" required pattern="^[a-zA-Z ]{2,30}$">
+                </div>
+                <div class="input-field">
+                    <label>10th Percentage</label>
+                    <input id="tp" type="text" pattern="(^100(\.0{1,2})?$)|(^([1-9]([0-9])?|0)(\.[0-9]{1,2})?$)" required>
+                </div>
+                <div class="input-field">
+                    <label>School Name</label>
+                    <input id="ts" type="text" required pattern="^[a-zA-Z ]{2,70}$">
+                </div>
+                <div class="center"><h6>Intermediate</h6></div>
+                <div class="input-field">
+                    <label>Intermediate Percentage</label>
+                    <input id="ip" type="text" pattern="(^100(\.0{1,2})?$)|(^([1-9]([0-9])?|0)(\.[0-9]{1,2})?$)" required>
+                </div>
+                <div class="input-field">
+                    <label>College Name</label>
+                    <input id="cn" type="text" required pattern="^[a-zA-Z]{4,100}$">
+                </div>
+                <div class="input-field">
+                    <label>Eamcet Rank</label>
+                    <input id="er" type="number" required>
+                </div>
+                <div class="center"><h6>BE</h6></div>
+                <div class="input-field">
+                    <label>CGPA(Percentage)</label>
+                    <input id="cgpa" type="text" pattern="(^100(\.0{1,2})?$)|(^([1-9]([0-9])?|0)(\.[0-9]{1,2})?$)" required>
+                </div>
+                <div class="input-field">
+                    <label>rollno(last 3 digits)</label>
+                    <input id="rollno" type="number" min=000 max=120 >
+                </div>
+                <div class="center">
+                    <button class="btn blue darken-4" type="submit">Submit</button></div>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        function edit()
+        {
+            var obj=localStorage.getItem('academic');
+            obj= JSON.parse(obj);
+            document.getElementById('tb').value =obj['tb'];
+            document.getElementById('tp').value =obj['tp'];
+            document.getElementById('ts').value =obj['ts'];
+            document.getElementById('ip').value =obj['ip'];
+            document.getElementById('cn').value =obj['cn'];
+            document.getElementById('er').value =obj['er'];
+            document.getElementById('cgpa').value =obj['cgpa'];
+            document.getElementById('rollno').value =obj['rollno'];
+        }
+        function response()
+        {
+            var obj={
+                'tb':document.forms['myform'].elements['tb'].value,
+                'tp':document.forms['myform'].elements['tp'].value,
+                'ts':document.forms['myform'].elements['ts'].value,
+                'ip':document.forms['myform'].elements['ip'].value,
+                'cn':document.forms['myform'].elements['cn'].value,
+                'er':document.forms['myform'].elements['er'].value,
+                'cgpa':document.forms['myform'].elements['cgpa'].value,
+                'rollno':document.forms['myform'].elements['rollno'].value,
+            }
+            localStorage.setItem('academic',JSON.stringify(obj));
+        }
+    </script>
+    <script>
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <title>Fee Payment</title>
+    <style>
+        .textcolor{
+            color: #880e4f;
+        }
+    </style>
+</head>
+<body style="background-color: #f8bbd0;">
+    <h1 class="textcolor">Fee Payment Form</h1>
+    <form >
+      <div style="margin-top: 4%;"> 
+        <label class="textcolor">First Name</label>
+        <input type="text" required><br><br>
+        <label class="textcolor">Last Name</label>
+        <input type="text" required><br><br>
+        <label class="textcolor">Roll Number</label>
+        <input type="text"  required><br><br>
+        <label class="textcolor" >Phone Number</label>
+        <input type="tel" pattern="[0-9]{10}" required><br><br>
+        <label class="textcolor">email</label>
+        <input type="email" required><br><br>
+        <label class="textcolor">Courses</label>
+        <select required>
+            <option>--select--</option>
+            <option>C</option>
+            <option>C++</option>
+            <option>Java</option>
+        </select><br><br>
+        <label class="textcolor" required>Upload Resume</label>
+        <input type="file"><br><br><br>
+        <button type="submit" style="margin-left: 8%;background-color: #880e4f;color: white;width: 80px;height: 28px;border-radius: 5px;">Pay</button>
+      </div>
+    </form>
+</body>
+</html>

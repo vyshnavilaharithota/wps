@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body style="background-image: url(bg.jpg);">
+    <nav class="white">
+        <div class="nav-wrapper container">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="blue-text text-darken-4" href="personal.html">Personal Information</a></li>
+                <li><a class="blue-text text-darken-4" href="academic.html">Academic</a></li>
+                <li><a class="blue-text text-darken-5" href="proctor.html" class="blue darken-5">Proctor</a></li>
+                <li><a class="blue-text text-darken-4" href="attendance.html">Attendance</a></li>
+                <li><a class="blue-text text-darken-4" href="view.html">View Details</a></li>
+                <li><a class="blue-text text-darken-4" href="index.html">Home</a></li>
+            </ul>
+            <a href="#slide-out" class=" sidenav-trigger  black-text"><i class="fa fa-bars" aria-hidden="true"></i></a>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav">
+        <li><a class="blue-text text-darken-4" href="personal.html">Personal Information</a></li>
+        <li><a class="blue-text text-darken-4" href="academic.html">Academic</a></li>
+        <li><a class="blue-text text-darken-5" href="proctor.html" class="blue-text text-darken-5">Proctor</a></li>
+        <li><a class="blue-text text-darken-4" href="attendance.html">Attendance</a></li>
+        <li><a class="blue-text text-darken-4" href="view.html">View Details</a></li>
+        <li><a class="blue-text text-darken-4" href="index.html">Home</a></li>
+    </ul>
+    <div class="center container">
+        <div  style="height: 22vh;"> </div>
+        <div class="container">
+        <div class="card-panel" style="opacity: 0.7;">
+            <button class="btn blue darken-4 right" onclick="edit()">edit</button>
+            <form onsubmit="response()" id="myform">
+                <div class="input-field">
+                    <label>Proctor Name</label>
+                    <input id="pn" type="text" pattern="^[a-zA-Z ]{2,30}$" required>
+                </div>
+                <div class="input-field">
+                    <label>Proctor Phone Number</label>
+                    <input id="ptel" type="tel" pattern="^[6-9]{1}[0-9]{9}$" required>
+                </div>
+                <div class="input-field">
+                    <label>Proctor Email</label>
+                    <input id="pe" type="email" required>
+                </div>
+                <div class="center">
+                    <button class="btn blue darken-4" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+    </script>
+     <script>
+        function edit()
+        {
+            var obj=localStorage.getItem('proctor');
+            obj= JSON.parse(obj);
+            document.getElementById('pn').value =obj['pn'];
+            document.getElementById('ptel').value =obj['ptel'];
+            document.getElementById('pe').value =obj['pe'];
+        }
+        function response()
+        {
+            var obj={
+                'pn':document.forms['myform'].elements['pn'].value,
+                'ptel':document.forms['myform'].elements['ptel'].value,
+                'pe':document.forms['myform'].elements['pe'].value,
+            }
+            localStorage.setItem('proctor',JSON.stringify(obj));
+        }
+    </script>
+</body>
+
+</html>

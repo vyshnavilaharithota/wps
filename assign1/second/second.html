@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="greetingimg" width="100%" height="60%">
+    <h2 id="tim" style="color: #ad1457;"></h2>
+    <br>
+    <h2 id="greeting" style="text-align: center;"></h2>
+    <h2 id="msg" style="text-align: center;"></h2>
+    <script>
+        setInterval(function(){
+            var day=new Date();
+            var hr=day.getHours()+'';
+            if(hr.length==1)
+                hr='0'+hr;
+            var min=day.getMinutes()+'';
+            if(min.length==1)
+                min='0'+min;
+            var sec=day.getSeconds()+'';
+            if(sec.length==1)
+                sec='0'+sec;
+            var dayno=day.getDay();
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            document.getElementById("tim").innerHTML= hr+":"+min+":"+sec+", "+weekday[dayno];
+            var ran=Math.random();
+            ran=ran*4;
+            ran=Math.floor(ran);
+            var nights=new Array(4);
+            nights[0]="night.jpg";
+            nights[1]="night1.jpg";
+            nights[2]="night2.jpg";
+            nights[3]="night3.jpg";
+            var mornings=new Array(4);
+            mornings[0]="morning.jpg";
+            mornings[1]="morning1.jpg";
+            mornings[2]="morning2.jpg";
+            mornings[3]="morning3.jpg";
+            var afternoons=new Array(4);
+            afternoons[0]="afternoon.jpg";
+            afternoons[1]="afternoon1.jpg";
+            afternoons[2]="afternoon2.jpg";
+            afternoons[3]="afternoon3.jpg";
+            var evenings=new Array(4);
+            evenings[0]="evening.jpg";
+            evenings[1]="evening1.jpg";
+            evenings[2]="evening2.jpg";
+            evenings[3]="evening3.jpg";
+            if((hr>=21 && hr<=24) || (hr>=0 && hr<=5))
+            {
+                document.getElementById('greetingimg').src=nights[ran];
+            }
+            else if((hr>5 && hr<12))
+            {
+                document.getElementById('greetingimg').src=mornings[ran];
+            }
+            else if((hr>=12 && hr<=17))
+            {
+                document.getElementById('greetingimg').src=afternoons[ran];
+            }
+            else
+            {
+                document.getElementById('greetingimg').src=evenings[ran];
+            }
+            
+        }, 1000);
+       
+        window.onload= function greetings(){
+            var day=new Date();
+            var hr=day.getHours();
+            if((hr>=21 && hr<=24) || (hr>=0 && hr<=5))
+            {
+                document.getElementById('greeting').innerHTML="Good Night!!";
+                document.getElementById('msg').innerHTML="Stay hopeful. Tomorrow brings a new day :)";
+                document.getElementById('msg').style.setProperty('color','#311b92');
+                document.getElementById('greeting').style.setProperty('color','#4527a0');
+                // document.getElementById('greetingimg').src=nights[ran];
+            }
+            else if((hr>5 && hr<12))
+            {
+                document.getElementById('greeting').innerHTML="Good Morning!!";
+                document.getElementById('msg').innerHTML="Have a nice day :)";
+                document.getElementById('msg').style.setProperty('color','#ef5350');
+                document.getElementById('greetingimg').src="morning.jpg";
+                document.getElementById('greeting').style.setProperty('color','#e57373');
+            }
+            else if((hr>=12 && hr<=17))
+            {
+                document.getElementById('greeting').innerHTML="Good Afternoon!!";
+                document.getElementById('msg').innerHTML="Enjoy this noon as there is much more in day that awaits your presence :)";
+                document.getElementById('msg').style.setProperty('color','#ffa000 ');
+                document.getElementById('greeting').style.setProperty('color','#ffb300');
+                document.getElementById('greetingimg').src="afternoon.jpg";
+            }
+            else
+            {
+                document.getElementById('greeting').innerHTML="Good Evening!!";
+                document.getElementById('msg').innerHTML="Evenings are life's way of saying that you are closer to your dreams :)";
+                document.getElementById('msg').style.setProperty('color','#7e57c2 ');
+                document.getElementById('greeting').style.setProperty('color','#9575cd');
+                document.getElementById('greetingimg').src="evening.jpg";
+            }
+            
+        }
+    </script>
+</body>
+</html>
