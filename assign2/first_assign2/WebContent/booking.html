@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Insert title here</title>
+<style>
+.inp {
+	width: 96% !important;
+	padding-left: 10px !important;
+	border-radius: 7px !important;
+	border-bottom: 1px rgb(235, 235, 235) solid !important;
+	background-color: rgba(235, 235, 235, 0.2) !important;
+	color: white !important;
+}
+
+.inp:focus {
+	border: 1px rgb(235, 235, 235) solid !important;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px gray
+		!important;
+}
+</style>
+</head>
+<body style="background-image: url('download.jpg'); background-size: cover;">
+<div class="container">
+		<div class="card-panel black" style="margin-top: 150px;">
+	<form method="post" action="Booking">
+	<h6 class="white-text">Screen</h6>
+		<input class="inp" type="text" name="screen" required>
+		<h6 class="white-text">City</h6>
+		<input class="inp" type="text" name="city" required>
+		<h6 class="white-text">Movie</h6>
+		<input class="inp" type="text" name="movie" required>
+		<h6 class="white-text">Tickets</h6>
+		<input class="inp" type="number" name="tickets" required><br><br>
+		<div class="center">
+		<input type="submit" class="btn white black-text" style="text-transform:capitalize;" value="Book Tickets">
+		</div>
+		
+	</form>
+	</div>
+	</div>
+</body>
+</html>

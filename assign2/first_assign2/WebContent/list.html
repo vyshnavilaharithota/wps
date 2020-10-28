@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Insert title here</title>
+</head>
+<body style="background-color:black">
+	<div class="carousel carousel-slider">
+    <a class="carousel-item" href="#one!"><img src="avengers.jpg" height=100%></a>
+    <a class="carousel-item" href="#two!"><img src="colouphoto.jpg" height=100%></a>
+    <a class="carousel-item" href="#three!"><img src="enola.jpg" height=100%></a>
+    <a class="carousel-item" href="#four!"><img src="kgf2.jpg" height=100%></a>
+  </div>
+   <br><br><br>
+	 <div class="center">
+	 <a class="yellow-text" href="theatre.html">&gt;&nbsp;&nbsp;Theatres list for a movie</a><br>
+	 <a class="yellow-text" href="datelist.html">&gt;&nbsp;&nbsp;Movies list today</a>
+	 </div>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	 <script type="text/javascript">
+	 document.addEventListener('DOMContentLoaded', function() {
+		    var elems = document.querySelectorAll('.carousel');
+		    var instances = M.Carousel.init(elems, {
+		        indicators: true});
+		  });
+	 </script>
+	
+</body>
+</html>

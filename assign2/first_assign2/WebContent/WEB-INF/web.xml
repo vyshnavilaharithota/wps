@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>second_assign2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+   <servlet>
+    <servlet-name>s1</servlet-name>
+    <servlet-class>Register</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>s1</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>s2</servlet-name>
+    <servlet-class>Login</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>s2</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>s3</servlet-name>
+    <servlet-class>Booking</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>s3</servlet-name>
+    <url-pattern>/Booking</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>s4</servlet-name>
+    <servlet-class>Moviepanel</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>s4</servlet-name>
+    <url-pattern>/Moviepanel</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>s5</servlet-name>
+    <servlet-class>Cityrevenue</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>s5</servlet-name>
+    <url-pattern>/Cityrevenue</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>s6</servlet-name>
+    <servlet-class>Movierevenue</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>s6</servlet-name>
+    <url-pattern>/Movierevenue</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>s7</servlet-name>
+    <servlet-class>Theatre</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>s7</servlet-name>
+    <url-pattern>/Theatre</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>s8</servlet-name>
+    <servlet-class>Datelist</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>s8</servlet-name>
+    <url-pattern>/Datelist</url-pattern>
+  </servlet-mapping>
+</web-app>
